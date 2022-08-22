@@ -1,0 +1,189 @@
+from cProfile import label
+from tkinter import *
+import os
+
+Imagens = os.path.dirname(__file__)
+
+
+def impDados():
+    print("")
+
+
+def semComando():
+    print("")
+
+
+def Teste():
+    print("")
+
+
+app = Tk()
+# Titulo do cabeçario da página
+app.title("SisConstru")
+app.geometry("500x300")
+app.configure(background="#ea9615")
+
+
+# Criar Menu
+barraDeMenu = Menu(app)
+menuContatos = Menu(barraDeMenu, tearoff=0)
+menuContatos.add_command(label="Novo", command=semComando)
+menuContatos.add_command(label="Pesquisar", command=semComando)
+menuContatos.add_command(label="Deletar", command=semComando)
+menuContatos.add_separator()
+menuContatos.add_command(label="Sair", command=quit)
+barraDeMenu.add_cascade(label="Fechar", menu=menuContatos)
+
+menuManutencao = Menu(barraDeMenu, tearoff=0)
+menuManutencao.add_command(label="Banco de Dados", command=semComando)
+barraDeMenu.add_cascade(label="Manutenção", menu=menuManutencao)
+
+menuSobre = Menu(barraDeMenu, tearoff=0)
+menuSobre.add_command(label="SisContru", command=semComando)
+barraDeMenu.add_cascade(label="Sobre", menu=menuSobre)
+
+app.config(menu=barraDeMenu)
+
+# relief(flat, raised, sunken ou solid)
+fr_quadro1 = Frame(app, borderwidth=1, relief="raised")
+fr_quadro1.place(x=10, y=10, width=80, height=80)
+# Botão de imprimir
+Button(app, text="Escolher", command=impDados).place(
+    x=10, y=110, width=80, height=20)
+
+imgfig1 = PhotoImage(file=Imagens+"\\tijolo.gif")
+l_mo = Label(app, image=imgfig1)
+l_mo.place(x=10, y=10)
+
+Label(app, text="Tijolo Baiano", background="#ea9615", foreground="#0D0902",
+      anchor=N).place(x=10, y=90, width=80, height=20)
+
+# relief(flat, raised, sunken ou solid)
+fr_quadro1 = Frame(app, borderwidth=1, relief="raised")
+fr_quadro1.place(x=110, y=10, width=80, height=80)
+# Botão de imprimir
+Button(app, text="Escolher", command=impDados).place(
+    x=110, y=110, width=80, height=20)
+
+imgfig2 = PhotoImage(file=Imagens+"\\tijolo.gif")
+l_mo = Label(app, image=imgfig2)
+l_mo.place(x=110, y=10)
+
+Label(app, text="Tijolo Baiano", background="#ea9615", foreground="#0D0902",
+      anchor=N).place(x=110, y=90, width=80, height=20)
+
+# relief(flat, raised, sunken ou solid)
+fr_quadro1 = Frame(app, borderwidth=1, relief="raised")
+fr_quadro1.place(x=210, y=10, width=80, height=80)
+# Botão de imprimir
+Button(app, text="Escolher", command=impDados).place(
+    x=210, y=110, width=80, height=20)
+
+imgfig3 = PhotoImage(file=Imagens+"\\tijolo.gif")
+l_mo = Label(app, image=imgfig3)
+l_mo.place(x=210, y=10)
+
+Label(app, text="Tijolo Baiano", background="#ea9615", foreground="#0D0902",
+      anchor=N).place(x=210, y=90, width=80, height=20)
+
+# relief(flat, raised, sunken ou solid)
+fr_quadro1 = Frame(app, borderwidth=1, relief="raised")
+fr_quadro1.place(x=310, y=10, width=80, height=80)
+# Botão de imprimir
+Button(app, text="Escolher", command=impDados).place(
+    x=310, y=110, width=80, height=20)
+
+imgfig4 = PhotoImage(file=Imagens+"\\tijolo.gif")
+l_mo = Label(app, image=imgfig4)
+l_mo.place(x=310, y=10)
+
+Label(app, text="Tijolo Baiano", background="#ea9615", foreground="#0D0902",
+      anchor=N).place(x=310, y=90, width=80, height=20)
+
+# relief(flat, raised, sunken ou solid)
+fr_quadro1 = Frame(app, borderwidth=1, relief="raised")
+fr_quadro1.place(x=410, y=10, width=80, height=80)
+# Botão de imprimir
+Button(app, text="Escolher", command=impDados).place(
+    x=410, y=110, width=80, height=20)
+
+imgfig5 = PhotoImage(file=Imagens+"\\tijolo.gif")
+l_mo = Label(app, image=imgfig5)
+l_mo.place(x=410, y=10)
+
+Label(app, text="Tijolo Baiano", background="#ea9615", foreground="#0D0902",
+      anchor=N).place(x=410, y=90, width=80, height=20)
+
+# relief(flat, raised, sunken ou solid)
+fr_quadro1 = Frame(app, borderwidth=1, relief="raised")
+fr_quadro1.place(x=10, y=170, width=80, height=80)
+# Botão de imprimir
+Button(app, text="Escolher", command=impDados).place(
+    x=10, y=250, width=80, height=20)
+
+imgfig6 = PhotoImage(file=Imagens+"\\tijolo.gif")
+l_mo = Label(app, image=imgfig6)
+l_mo.place(x=10, y=150)
+
+Label(app, text="Tijolo Baiano", background="#ea9615", foreground="#0D0902",
+      anchor=N).place(x=10, y=230, width=80, height=20)
+
+# relief(flat, raised, sunken ou solid)
+fr_quadro1 = Frame(app, borderwidth=1, relief="raised")
+fr_quadro1.place(x=110, y=170, width=80, height=80)
+# Botão de imprimir
+Button(app, text="Escolher", command=impDados).place(
+    x=110, y=250, width=80, height=20)
+
+imgfig7 = PhotoImage(file=Imagens+"\\tijolo.gif")
+l_mo = Label(app, image=imgfig7)
+l_mo.place(x=110, y=150)
+
+Label(app, text="Tijolo Baiano", background="#ea9615", foreground="#0D0902",
+      anchor=N).place(x=110, y=230, width=80, height=20)
+
+# relief(flat, raised, sunken ou solid)
+fr_quadro1 = Frame(app, borderwidth=1, relief="raised")
+fr_quadro1.place(x=210, y=170, width=80, height=80)
+# Botão de imprimir
+Button(app, text="Escolher", command=impDados).place(
+    x=210, y=250, width=80, height=20)
+
+imgfig8 = PhotoImage(file=Imagens+"\\tijolo.gif")
+l_mo = Label(app, image=imgfig8)
+l_mo.place(x=210, y=150)
+
+Label(app, text="Tijolo Baiano", background="#ea9615", foreground="#0D0902",
+      anchor=N).place(x=210, y=230, width=80, height=20)
+
+# relief(flat, raised, sunken ou solid)
+fr_quadro1 = Frame(app, borderwidth=1, relief="raised")
+fr_quadro1.place(x=310, y=170, width=80, height=80)
+# Botão de imprimir
+Button(app, text="Escolher", command=impDados).place(
+    x=310, y=250, width=80, height=20)
+
+imgfig9 = PhotoImage(file=Imagens+"\\tijolo.gif")
+l_mo = Label(app, image=imgfig9)
+l_mo.place(x=310, y=150)
+
+Label(app, text="Tijolo Baiano", background="#ea9615", foreground="#0D0902",
+      anchor=N).place(x=310, y=230, width=80, height=20)
+
+# relief(flat, raised, sunken ou solid)
+fr_quadro1 = Frame(app, borderwidth=1, relief="raised")
+fr_quadro1.place(x=410, y=170, width=80, height=80)
+
+# Botão de imprimir
+Button(app, text="Escolher", command=impDados).place(
+    x=410, y=250, width=80, height=20)
+
+imgfig10 = PhotoImage(file=Imagens+"\\tijolo.gif")
+l_mo = Label(app, image=imgfig10)
+l_mo.place(x=410, y=150)
+
+Label(app, text="Tijolo Baiano", background="#ea9615", foreground="#0D0902",
+      anchor=N).place(x=410, y=230, width=80, height=20)
+
+
+app = mainloop()

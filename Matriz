@@ -1,0 +1,100 @@
+from cProfile import label
+from distutils.cmd import Command
+from tkinter import *
+from turtle import width
+import os
+# criar arquivo
+c = os.path.dirname(__file__)
+nomeArquivo = c+"\\nomes.txt"
+
+# Criar arquivo
+
+
+def impDados():
+    arquivo = open(nomeArquivo, "a")
+    arquivo.write("Nome:... %s" % vnome.get())
+    arquivo.write("\nTelefone:%s" % vtelefone.get())
+    arquivo.write("\nE-mail:..%s" % vemail.get())
+    arquivo.write("\nOBS:.....%s" % vobs.get("1.0", END))
+    arquivo.write("\n")
+    arquivo.close()
+
+
+def semComando():
+    print("")
+
+
+def Novo():
+    exec(open(c+"\\teste.py").read)
+
+
+app = Tk()
+
+# Cria uma borda funda
+# relief(flat, raised, sunken ou solid)
+fr_quadro1 = Frame(app, borderwidth=1, relief="raised")
+fr_quadro1.place(x=10, y=10, width=300, height=100)
+# Titulo do cabeçario da página
+app.title("SisConstru")
+app.geometry("500x300")
+app.configure(background="#ea9615")
+# Título no alto da página inicial
+# txt1 = Label(app, text="Sistema de Cálculo",
+#              background="#ea9615", foreground="#000",)
+# txt1.place(x=200, y=10, width=100, height=20)
+
+# Criar Menu
+barraDeMenu = Menu(app)
+menuContatos = Menu(barraDeMenu, tearoff=0)
+menuContatos.add_command(label="Novo", command=Novo)
+menuContatos.add_command(label="Pesquisar", command=semComando)
+menuContatos.add_command(label="Deletar", command=semComando)
+menuContatos.add_separator()
+menuContatos.add_command(label="Sair", command=quit)
+barraDeMenu.add_cascade(label="Fechar", menu=menuContatos)
+
+menuManutencao = Menu(barraDeMenu, tearoff=0)
+menuManutencao.add_command(label="Banco de Dados", command=semComando)
+barraDeMenu.add_cascade(label="Manutenção", menu=menuManutencao)
+
+menuSobre = Menu(barraDeMenu, tearoff=0)
+menuSobre.add_command(label="SisContru", command=semComando)
+barraDeMenu.add_cascade(label="Sobre", menu=menuSobre)
+
+app.config(menu=barraDeMenu)
+
+
+# Cabeçario da Label
+Label(app, text="Nome", background="#dde", foreground="#009",
+      anchor=N).place(x=10, y=10, width=100, height=20)
+# Caixa da label
+vnome = Entry(app)
+vnome.place(x=10, y=30, width=200, height=20)
+
+Label(app, text="Telefone", background="#dde", foreground="#009",
+      anchor=N).place(x=10, y=60, width=100, height=20)
+vtelefone = Entry(app)
+vtelefone.place(x=10, y=80, width=200, height=20)
+
+Label(app, text="E-mail", background="#dde", foreground="#009",
+      anchor=N).place(x=10, y=110, width=100, height=20)
+vemail = Entry(app)
+vemail.place(x=10, y=130, width=300, height=20)
+
+Label(app, text="OBS", background="#dde", foreground="#009",
+      anchor=N).place(x=10, y=160, width=100, height=20)
+vobs = Text(app)
+vobs.place(x=10, y=180, width=300, height=80)
+
+#vtxt = "Módulo Tkinter"
+# vbg = "#008"
+# vfg = "#fff"
+#txt2 = Label(app, text=vtxt, bg=vbg, fg=vfg)
+#txt2.pack(ipadx=20, ipady=20, padx=5, pady=5, side="top", fill=X, expand=True)
+
+# Botão de imprimir
+Button(app, text="Gravar Dados", command=impDados).place(
+    x=10, y=270, width=100, height=20)
+
+
+app.mainloop()
